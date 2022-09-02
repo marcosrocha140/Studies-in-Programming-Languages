@@ -4,23 +4,23 @@ class HelloWorld {
         Scanner input = new Scanner(System.in);
         int x;
         int y;
-        float media;
 
-        System.out.print("Digite um numero: ");
+        System.out.print("Digite um numero.");
         x = input.nextInt();
-
-        System.out.print("Digite a outro numero:");
+        System.out.print("Digite outro numero.");
         y = input.nextInt();
 
-        media = (x + y) / 2;
 
-        if(media < 7){
-            System.out.println("Reprovado! Media = "+ media);
-
-        }else{
-            System.out.println("Aprovado! Media = 8" + media);
-
+        while(x != y){
+            System.out.print("Digite um numero.");
+            x = input.nextInt();
+            System.out.print("Digite outro numero.");
+            y = input.nextInt();
+    
         }
+
+        System.out.print("voce saiu do loop: "+ x+y);
+   
 
     }
 }
