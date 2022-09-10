@@ -5,9 +5,27 @@ public class Pessoa {
 	private int idade;
 	private float altura;
 	private int cpf;
+	private int genero;
+	private String str;
 	
 	
+	public void Funcao() {
+		
+	}
 	
+	
+	public String getStr() {
+		return str;
+	}
+	public void setStr(String str) {
+		this.str = str;
+	}
+	public int getGenero() {
+		return genero;
+	}
+	public void setGenero(int genero) {
+		this.genero = genero;
+	}
 	public String getNome() {
 		return nome;
 	}
