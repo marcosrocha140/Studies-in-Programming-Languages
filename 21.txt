@@ -1,0 +1,124 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Random random = new System.Random();
+        int[] player1 = new int[5];
+        int[] player2 = new int[5];
+        int soma1 = 0, soma2 = 0;
+        //int x;
+        
+        //int value;
+        
+        //Gerando  dois numeros aleatorios sem repetir
+        int value = random.Next(0, 11) +1;
+        player1[0] = value;
+        soma1 = soma1 + player1[0];
+                value = random.Next(0, 11) +1;
+                while(value == player1[0]){
+                       value = random.Next(0, 11) +1;
+                }
+            player1[1] = value;
+            soma1 = soma1 + player1[1];
+        
+        Console.WriteLine ("Jogador:JPdoGrau");
+        Console.WriteLine ("Carta: "+player1[0]);
+        Console.WriteLine ("Carta: "+player1[1]);
+        Console.WriteLine (soma1+"/21\n");
+        
+        
+        //Gerando mais dois numeros aleatorios sem repetir
+        value = random.Next(0, 11) +1;
+        while(value == player1[0] || value == player1[1]){
+            value = random.Next(0, 11) +1;
+        }
+        
+        player2[0] = value;
+        soma2 = soma2 + player2[0];
+        
+        value = random.Next(0, 11) +1;
+        while(value == player1[0] || value == player1[1] || value == player2[0]){
+            value = random.Next(0, 11) +1;
+        }
+        
+        player2[1] = value;
+        soma2 = soma2 + player2[1];
+        
+        Console.WriteLine ("Jogador:KauedoMD");
+        Console.WriteLine ("Carta: "+player2[0]);
+        Console.WriteLine ("Carta: "+player2[1]);
+        Console.WriteLine (soma2+"/21\n");
+        
+        //Criar sistema de escolha Comprar/Passar
+        Console.WriteLine("1 - Pegar Carta.\n0 - Passar.");
+        int x = int.Parse(Console.ReadLine());
+        
+        switch(x){
+            case 1:
+                value = random.Next(0, 11) +1;
+                while(value == player1[0] || value == player1[1] || value == player2[0] || value == player2[1]){
+                    value = random.Next(0, 11) +1;
+                }
+                player1[2] = value;
+                soma1 = soma1 + player1[2];
+                Console.WriteLine("Carta: "+player1[2]);
+                break;
+                
+                case 0:
+                Console.WriteLine("Voce Passou!");
+                break;
+        }
+        
+        Console.WriteLine("----------------");
+        Console.WriteLine ("Jogador:JPdoGrau");
+        Console.WriteLine ("Carta: "+player1[0]);
+        Console.WriteLine ("Carta: "+player1[1]);
+        Console.WriteLine (soma1+"/21\n");
+            if(soma1 > 21){
+                Console.WriteLine("Voce Estourou!");
+            }
+        
+        Console.WriteLine("1 - Pegar Carta.\n0 - Passar.");
+        int y = int.Parse(Console.ReadLine());
+        
+        switch(y){
+            case 1:
+                value = random.Next(0, 11) +1;
+                while(value == player1[0] || value == player1[1] || value == player2[0] || value == player2[1]){
+                    value = random.Next(0, 11) +1;
+                }
+                player2[2] = value;
+                soma2 = soma2 + player2[2];
+                Console.WriteLine("Carta: "+player2[2]);
+                break;
+                
+        }
+        
+        
+        Console.WriteLine("----------------");
+        Console.WriteLine ("Jogador:KauedoMD");
+        Console.WriteLine ("Carta: "+player2[0]);
+        Console.WriteLine ("Carta: "+player2[1]);
+        Console.WriteLine (soma2+"/21\n");
+        
+        if(x == y){
+            if(soma1 > soma2){
+            Console.WriteLine("JPdoGrau: Ganhou!");
+        }else{
+            Console.WriteLine("KauedoMD: Ganhou!");
+        }
+        }else{
+            //se por acaso algum comprar carta
+        }
+        
+    
+        
+        
+        
+    }
+}
